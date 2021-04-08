@@ -52,3 +52,13 @@ Botanic Garden warranties the measurments are accurate and free of any bias or e
 
 * Heuristics: If we didnt use ML, an alternative option could be to take a flower DNA sample 
 and analyze on the field which species that sample belong, but this may take 3h to be done.
+
+
+## App User Interface
+### Page 1
+* xxx
+* xx
+
+### Page 2
+
+### Page 3
