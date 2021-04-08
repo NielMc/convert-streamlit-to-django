@@ -15,7 +15,7 @@ def main():
 
     MenuOptions = [
         'EDA',
-        'ML Model',
+        'ML Model: Clf1_BR2',
         'User Interface',
         ]
     page = st.sidebar.radio("Main Menu",MenuOptions,index=0)
