@@ -1,2 +1,8 @@
 tasks:
   - init: pip3 install -r requirements.txt
+
+vscode:
+  extensions:
+    - magicstack.magicpython@1.1.1:43ee21f3f77d7aef64304fe735f20396
+    - kevinrose.vsc-python-indent@1.12.0:34e1da3a6d484e816b1b87e2b78fa153
+    - kiteco.kite@0.142.0:1d8020ca5f0d18dc09e9e1aa26bab56b
