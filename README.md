@@ -1,15 +1,11 @@
 ## Project Purpose
-* In this project, you'll build a Data Web App to ....
-* In this project, you'll build a Data Web App to provide actionable insights and data driven recommendations for formulating user’s churn profile and for increasing loyalty levels for a Telecom company.
-
+* In this project, you'll build a Data Web App to provide actionable insights and data driven recommendations for analyzing flowers profile and increasing productivity levels for Botanic field team
 
 ## External user’s goal
-* The Data Web App stakeholders are interested to ....
-* The Data Web App stakeholders are interested to understand the user's churn profile and to increase the user's loyalty levels.
+* The Data Web App stakeholders (Special Flower divsion team) are interested to understand how each flowet's species differ from each other and a tool to speedup species recognition.
 
 ## Data Web App owner's goal
-* The goal of this Data Web App is to ....
-* The goal of this Data Web App is to transform this Telecom company in a data driven organization.
+* The goal of this Data Web App is to help Botanic Garden to transform to a data driven organization.
 
 
 ## Business Requirements 
