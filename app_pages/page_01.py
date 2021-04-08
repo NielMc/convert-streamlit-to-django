@@ -1,16 +1,16 @@
 import streamlit as st
-from src.eda import PlotPairplot, Plot3D, HeatmapCorrelation
+from src.processing.eda import PlotPairplot, Plot3D, HeatmapCorrelation
 from config import config
 
 def BodyPage1(df):
 
     st.write("---")
     st.write("#### Pair Plot")
-    PlotPairplot(df,"Species")
+    PlotPairplot(df,config.TARGET_Clf1_BR2)
 
     st.write("---")
     st.write("#### 3D Plot")
-    Plot3D(df,"Species")
+    Plot3D(df,config.TARGET_Clf1_BR2)
 
     st.write("---")
     st.write("#### Correlation Heatmap")

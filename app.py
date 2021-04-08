@@ -2,7 +2,7 @@ import streamlit as st
 from app_pages.page_01 import BodyPage1
 from app_pages.page_02 import BodyPage2
 from app_pages.page_03 import BodyPage3
-from src.data_management import LoadIrisDataset
+from src.processing.data_management import LoadIrisDataset
 
 from config import config
 import __init__
