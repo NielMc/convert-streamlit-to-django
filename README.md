@@ -56,9 +56,13 @@ and analyze on the field which species that sample belong, but this may take 3h 
 
 ## App User Interface
 ### Page 1
-* xxx
-* xx
+* Pairplot colored by species with multi-select menu listing all variables but species
+* 3D scatter plot colored by species with 3 menus, where each menu has list of all variables but species
+* Correlation Heatmap using all variables 
 
 ### Page 2
+* Button to fit and save a ML model. Once finished, the model is evaluated on train and test set.
 
 ### Page 3
+* User Interface with inputs (flower measurements) as numerical fields and prediction as statement
+
