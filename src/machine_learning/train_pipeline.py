@@ -4,9 +4,8 @@ from config import config
 import streamlit as st
 
 
-import joblib
 import src.machine_learning.pipeline as pipeline
-from src.processing.data_management import (SavePipeline)
+from src.processing.data_management import SavePipeline,SaveTrainTestSets
 
 from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
  
@@ -23,12 +22,14 @@ def TrainPipeline_Clf1_BR2(X_train, X_test, y_train, y_test) -> None:
     st.write(ml_pipeline)
      
      
-    # save train, test data
-    	# save_train_test_set(
-		# X_train, X_test,
-		# y_train, y_test)
-     
     # save pipeline
-    SavePipeline(pipeline_to_persist = ml_pipeline, model_name=config.Clf1_BR2_name)
+    SavePipeline(pipeline_to_persist=ml_pipeline, model_name=config.Clf1_BR2_name)
+    
+         
+    # save train, test data
+    SaveTrainTestSets(
+        X_train=X_train, X_test=X_test,
+        y_train=y_train, y_test=y_test
+    )
     
     return ml_pipeline

@@ -38,6 +38,28 @@ def TrainTestSplit(df,TARGET):
 def SavePipeline(*, pipeline_to_persist,model_name) -> None:
     
     save_file_name = f"{model_name}_v{_version}.pkl"
-    save_path = config.TRAINED_MODEL_DIR / model_name / save_file_name
+    save_path = config.TRAINED_MODEL_DIR / save_file_name
 
     joblib.dump(pipeline_to_persist, save_path)
+
+
+def SaveTrainTestSets(X_train, X_test, y_train, y_test):
+    
+    X_train.to_csv(
+    	f"{config.DATASET_OUTPUT_DIR}/{config.X_TRAIN_SET}_v{_version}.csv",
+    	index=True,
+    	index_label="index")
+
+    X_test.to_csv(f"{config.DATASET_OUTPUT_DIR}/{config.X_TEST_SET}_v{_version}.csv",
+    	index=True,
+    	index_label="index")
+
+    # (pd.DataFrame(y_train,columns=[config.TARGET])
+    # 	.to_csv(f"{config.DATASET_DIR}/{config.Y_TRAIN_SET}_v{_version}.csv",
+    # 		index=True,
+    # 		index_label="index"))
+
+    # (pd.DataFrame(y_test,columns=[config.TARGET])
+    # 	.to_csv(f"{config.DATASET_DIR}/{config.Y_TEST_SET}_v{_version}.csv",
+    # 		index=True,
+    # 		index_label="index"))
