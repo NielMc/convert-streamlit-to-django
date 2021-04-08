@@ -21,3 +21,8 @@ RANDOM_STATE=0
 #  Clf1_BR2
 TARGET_Clf1_BR2 = "Species"
 Clf1_BR2_name = "Clf1_BR2"
+Clf1_BR2_Map = {
+        0:"Setosa",
+        1:"Versicolour",
+        2:"Virginica"
+    }

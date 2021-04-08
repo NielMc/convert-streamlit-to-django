@@ -43,23 +43,25 @@ def SavePipeline(*, pipeline_to_persist,model_name) -> None:
     joblib.dump(pipeline_to_persist, save_path)
 
 
-def SaveTrainTestSets(X_train, X_test, y_train, y_test):
+def SaveTrainTestSets(model_name,target,X_train, X_test, y_train, y_test):
     
     X_train.to_csv(
-    	f"{config.DATASET_OUTPUT_DIR}/{config.X_TRAIN_SET}_v{_version}.csv",
+    	f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.X_TRAIN_SET}_v{_version}.csv",
     	index=True,
     	index_label="index")
 
-    X_test.to_csv(f"{config.DATASET_OUTPUT_DIR}/{config.X_TEST_SET}_v{_version}.csv",
+    X_test.to_csv(f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.X_TEST_SET}_v{_version}.csv",
     	index=True,
     	index_label="index")
 
-    # (pd.DataFrame(y_train,columns=[config.TARGET])
-    # 	.to_csv(f"{config.DATASET_DIR}/{config.Y_TRAIN_SET}_v{_version}.csv",
-    # 		index=True,
-    # 		index_label="index"))
+    df_y_train = pd.DataFrame(y_train,columns=[target])
+    df_y_train.to_csv(
+        f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.Y_TRAIN_SET}_v{_version}.csv",
+        index=True,
+        index_label="index")
 
-    # (pd.DataFrame(y_test,columns=[config.TARGET])
-    # 	.to_csv(f"{config.DATASET_DIR}/{config.Y_TEST_SET}_v{_version}.csv",
-    # 		index=True,
-    # 		index_label="index"))
+    df_y_test = pd.DataFrame(y_test,columns=[target])
+    df_y_test.to_csv(
+        f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.Y_TEST_SET}_v{_version}.csv",
+        index=True,
+        index_label="index")
