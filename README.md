@@ -2,7 +2,7 @@
 * In this project, you'll build a Data Web App to provide actionable insights and data driven recommendations for analyzing flowers profile and increasing productivity levels for Botanic field team
 
 ## External user’s goal
-* The Data Web App stakeholders (Special Flower divsion team) are interested to understand how each flowet's species differ from each other and a tool to speedup species recognition.
+* The Data Web App stakeholders (Special Flower divsion team) are interested to understand how each flower's species differ from each other and a tool to speedup species recognition.
 
 ## Data Web App owner's goal
 * The goal of this Data Web App is to help Botanic Garden to transform to a data driven organization.
@@ -10,8 +10,8 @@
 
 ## Business Requirements 
 * As a Data Analyst from Botanic Garden, you are requested by Special Flower division to develop a system capable to distinguish among 3 distinct Iris species. Their next field mission at XYZ forest, which is officialy declared as contaminated area and is in the middle of nowehere. The team will harvest the flowers and store on boxes, but each box should have 1 specie type. The mission will happen in 10 days from today, and will take in total 25 days. 
-* 1 - We want to study how flowers' sepal and petal measurements differ across species.
-* 2 - We are interested to recognize the flower species based on its instant petal and sepal measurement
+  * 1 - We want to study how flowers' sepal and petal measurements differ across species.
+  * 2 - We are interested to recognize the flower species based on its instant petal and sepal measurement
 
 
 ## Rationale to map the business requirements to the Data Visualizations and ML tasks
