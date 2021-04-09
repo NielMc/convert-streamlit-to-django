@@ -14,9 +14,9 @@ def main():
     df = LoadIrisDataset()
 
     MenuOptions = [
-        'EDA',
-        'ML Model: Clf1_BR2',
         'User Interface',
+        'Data Visualization',
+        'ML Model: ClfIrisSpecies'
         ]
     page = st.sidebar.radio("Main Menu",MenuOptions,index=0)
     

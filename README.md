@@ -19,13 +19,13 @@
   * We create a Pairplot colored by Species; 3D scatter plot colored by Species and a Correlation Heatmap
 
 * Business Requirement 2: Classification
-  * We will build a classifier (Clf1_BR2) to predict flower species based on the sepal and petal measurement.
+  * We will build a classifier (ClfIrisSpecies) to predict flower species based on the sepal and petal measurement.
     * Train data - label: Species ; features: all other variables
 
 
 
 ## ML Business Case
-### Clf1_BR2
+### ClfIrisSpecies
 * We will create ML model to predict what is the flower species based on sepal and petal measurements. 
 It is a 3-class, single-label, classification model: 0 (Setosa), 1 (Versicolour) and 2 (Virginica).
 * Our ideal outcome is to provide Special Flowers botanics team a intelligent solution to speed up
@@ -55,14 +55,16 @@ and analyze on the field which species that sample belong, but this may take 3h 
 
 
 ## App User Interface
-### Page 1: EDA
+### Page 1: ML UI
+* User Interface with inputs (flower measurements) as numerical fields and prediction as a statement
+
+### Page 2: Data Visualization
 * Pairplot colored by species with multi-select menu listing all variables but species
 * 3D scatter plot colored by species with 3 menus, where each menu has list of all variables but species
 * Correlation Heatmap using all variables 
 
-### Page 2: ML model
+### Page 3: ML model: ClfIrisSpecies
 * Button to fit and save a ML model. Once finished, the model is evaluated on train and test set.
 
-### Page 3: UI
-* User Interface with inputs (flower measurements) as numerical fields and prediction as statement
+
 
