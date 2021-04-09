@@ -10,7 +10,7 @@ def ClfEvaluation(Prediction, Actual):
     st.code(classification_report(Actual, Prediction))
 
     st.write("#### Confusion Matrix")
-    ClassMap = config.Clf1_BR2_Map.values()
+    ClassMap = config.ClfIrisSpecies_MAP.values()
 
     st.code(pd.DataFrame(confusion_matrix(Prediction,Actual),
                 columns=[ ["Actual " + sub for sub in ClassMap] ], 

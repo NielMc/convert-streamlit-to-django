@@ -6,11 +6,11 @@ def DataVisualizationBody(df):
 
     st.write("---")
     st.write("#### Pair Plot")
-    PlotPairplot(df,config.TARGET_Clf1_BR2)
+    PlotPairplot(df,config.ClfIrisSpecies_TARGET)
 
     st.write("---")
     st.write("#### 3D Plot")
-    Plot3D(df,config.TARGET_Clf1_BR2)
+    Plot3D(df,config.ClfIrisSpecies_TARGET)
 
     st.write("---")
     st.write("#### Correlation Heatmap")

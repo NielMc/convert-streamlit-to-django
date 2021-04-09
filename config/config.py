@@ -1,6 +1,5 @@
 import pathlib
 
-
 # directory name
 PACKAGE_ROOT = pathlib.Path().resolve()
 DATASET_OUTPUT_DIR = PACKAGE_ROOT / "outputs/datasets"
@@ -18,11 +17,11 @@ Y_TEST_SET = "Y_TestSet"
 TEST_SIZE=0.2
 RANDOM_STATE=0
  
-#  Clf1_BR2
-TARGET_Clf1_BR2 = "Species"
-Clf1_BR2_name = "Clf1_BR2"
-Clf1_BR2_Map = {
-        0:"Setosa",
-        1:"Versicolour",
-        2:"Virginica"
+#  ClfIrisSpecies
+ClfIrisSpecies_TARGET = "Species"
+ClfIrisSpecies_NAME = "ClfIrisSpecies"
+ClfIrisSpecies_MAP = {
+        0:"0 - Setosa",
+        1:"1 - Versicolour",
+        2:"2 - Virginica"
     }

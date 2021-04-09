@@ -1,7 +1,7 @@
 import streamlit as st
-from app_pages.ml_ui import ML_UI_Body
-from app_pages.data_visualization import DataVisualizationBody
-from app_pages.ml_ClfIrisSpecies import ML_ClfIrisSpeciesBody
+from app_pages.page_ml_ui import ML_UI_Body
+from app_pages.page_data_visualization import DataVisualizationBody
+from app_pages.page_ml_ClfIrisSpecies import ML_ClfIrisSpeciesBody
 from src.processing.data_management import LoadIrisDataset
 
 from config import config

@@ -5,7 +5,7 @@ from sklearn.feature_selection import SelectFromModel
 from sklearn.preprocessing import StandardScaler
 from sklearn.tree import DecisionTreeClassifier 
 
-Clf1_BR2 = Pipeline(
+ClfIrisSpecies = Pipeline(
     [       
         ("feat_selection",SelectFromModel(DecisionTreeClassifier())),
         ("feat_scaling",StandardScaler()),

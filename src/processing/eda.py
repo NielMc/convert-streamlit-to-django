@@ -4,17 +4,13 @@ import numpy as np
 import seaborn as sns
 import plotly.express as px
 import matplotlib.pyplot as plt
+from config import config
 
-def PlotPairplot(df,TARGET):
+def PlotPairplot(dfRaw,TARGET):
     
-
-    # FeaturesColumns = df_original.drop([TARGET],axis=1).columns
-    # pairplot_columns = st.multiselect(label="Select Features", options=FeaturesColumns)
-
-
-    # df = df_original.copy().filter(pairplot_columns + [TARGET])
-
-    # if len(df.columns) > 2:
+    df = dfRaw.copy()
+    df[TARGET] = df[TARGET].replace(config.ClfIrisSpecies_MAP)
+    
     fig = sns.pairplot(
         data=df,
         hue= TARGET,
@@ -39,6 +35,7 @@ def Plot3D(df_original,TARGET):
 
 
     df = df_original.copy()
+    df[TARGET] = df[TARGET].replace(config.ClfIrisSpecies_MAP)
     df[TARGET] = df[TARGET].astype(str)
     fig = px.scatter_3d(df, x=select_x, y=select_y, z=select_z,
         color=TARGET, 
