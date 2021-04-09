@@ -20,10 +20,10 @@ def ML_UI_Body(df):
 
         ProbText = ""
         for x in range(0,len(y_liveProba[0])):
-            aux = f"	* Class {x} - {config.ClfIrisSpecies_MAP[x]}: {round(y_liveProba[0][x],2)} \n "
+            aux = f"	* {config.ClfIrisSpecies_MAP[x]}: {round(y_liveProba[0][x],2)} \n "
             ProbText = ProbText + aux
 
-        st.warning(
+        st.info(
             f"* The predicted class is **{(y_live)}: {config.ClfIrisSpecies_MAP[y_live]}** \n"
             f"* The probability for each class is: \n\n "
             f"{ProbText}")
@@ -34,43 +34,50 @@ def ML_UI_Body(df):
 def CreateWidgetsUI(df):
     import pandas as pd
     
-    col1, col2, col3, col4 = st.beta_columns(4)
+    col1, col2, = st.beta_columns(2)
+    col3, col4 = st.beta_columns(2)
+    
     percentageMin,percentageMax = 0.8 , 1.2
+    step = 0.05
     
     with col1:
         feature = 'sepal length (cm)'
-        sepal_length = st.number_input(
+        sepal_length = st.slider(
             'Enter sepal_length',
-            min_value=df[feature].min() * percentageMin,
-            max_value=df[feature].max() * percentageMax,
-            value=df[feature].median()
+            min_value=float(df[feature].min() * percentageMin),
+            max_value=float(df[feature].max() * percentageMax),
+            step=step,
+            value=float(df[feature].median())
         )
     
     with col2:
         feature = 'sepal width (cm)'
-        sepal_width = st.number_input(
+        sepal_width = st.slider(
             'Enter sepal_width',
-            min_value=df[feature].min() * percentageMin,
-            max_value=df[feature].max() * percentageMax,
-            value=df[feature].median()
+            min_value=float(df[feature].min() * percentageMin),
+            max_value=float(df[feature].max() * percentageMax),
+            step=step,
+            value=float(df[feature].median())
         )
     
     with col3:
         feature = 'petal length (cm)'
-        petal_length = st.number_input(
+        petal_length = st.slider(
             'Enter petal_length',
-            min_value=df[feature].min() * percentageMin,
-            max_value=df[feature].max() * percentageMax,
-            value=df[feature].median()
+            min_value=float(df[feature].min() * percentageMin),
+            max_value=float(df[feature].max() * percentageMax),
+            step=step,
+            value=float(df[feature].median())
         )
     
     with col4:
         feature = 'petal width (cm)'
-        petal_width = st.number_input(
+        petal_width = st.slider(
             'Enter petal_width',
-            min_value=df[feature].min() * percentageMin,
-            max_value=df[feature].max() * percentageMax,
-            value=df[feature].median()
+            min_value=float(df[feature].min() * percentageMin),
+            max_value=float(df[feature].max() * percentageMax),
+            step=step,
+            value=float(df[feature].median())
         )
         
     X_live = pd.DataFrame(
