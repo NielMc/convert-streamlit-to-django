@@ -12,6 +12,7 @@ from src.machine_learning.model_evaluation import ClfEvaluation
 def ML_ClfIrisSpeciesBody(df):
     
     st.write("## ClfIrisSpecies")
+    st.write("---")
     
 
     # Check if model was already trained/save

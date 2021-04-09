@@ -3,23 +3,32 @@ from config import config
 from src.processing.data_management import LoadPipeline
 
 def ML_UI_Body(df):
-    #* User Interface with inputs (flower measurements) as numerical fields 
-    # #and prediction as a statement
     
-    st.write(df.columns)
+    st.write("## Machine Learning UI")
+    st.write("---")
     
     X_live = CreateWidgetsUI(df)
     
     pipeline_ClfIrisSpecies = LoadPipeline(model_name=config.ClfIrisSpecies_NAME)
+    st.write("---")
     
     if st.button("Predict"):
-    
-        Prediction_live = pipeline_ClfIrisSpecies.predict(X_live)[0]
-        Prediction_label = config.ClfIrisSpecies_MAP[Prediction_live]
-        st.write(
-            f"* There is xx% of probability to be a **{Prediction_label}** species."
-            )
+        
+        
+        y_live = int(pipeline_ClfIrisSpecies.predict(X_live))
+        y_liveProba = pipeline_ClfIrisSpecies.predict_proba(X_live)
 
+        ProbText = ""
+        for x in range(0,len(y_liveProba[0])):
+            aux = f"	* Class {x} - {config.ClfIrisSpecies_MAP[x]}: {round(y_liveProba[0][x],2)} \n "
+            ProbText = ProbText + aux
+
+        st.warning(
+            f"* The predicted class is **{(y_live)}: {config.ClfIrisSpecies_MAP[y_live]}** \n"
+            f"* The probability for each class is: \n\n "
+            f"{ProbText}")
+
+       
 
     
 def CreateWidgetsUI(df):
