@@ -54,46 +54,40 @@ def SaveTrainTestSets(model_name,target,X_train, X_test, y_train, y_test):
     
     X_train.to_csv(
     	f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.X_TRAIN_SET}_v{_version}.csv",
-    	index=True,
-    	index_label="index")
+        index=False)
 
-    X_test.to_csv(f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.X_TEST_SET}_v{_version}.csv",
-    	index=True,
-    	index_label="index")
+    X_test.to_csv(
+        f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.X_TEST_SET}_v{_version}.csv",
+    	index=False)
 
     df_y_train = pd.DataFrame(y_train,columns=[target])
     df_y_train.to_csv(
         f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.Y_TRAIN_SET}_v{_version}.csv",
-        index=True,
-        index_label="index")
+        index=False)
 
     df_y_test = pd.DataFrame(y_test,columns=[target])
     df_y_test.to_csv(
         f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.Y_TEST_SET}_v{_version}.csv",
-        index=True,
-        index_label="index")
+        index=False)
     
     
 
-def loadTrainTestSets(model_name):
+def LoadTrainTestSets(model_name):
     
-     file_path = config.DATASET_DIR / file_name
-    return pd.read_csv(file_path)
-    
-    X_train = (load_output_dataset(file_name=f"{config.X_TRAIN_SET}_v{_version}.csv")
-        .set_index(["index"],drop=True)
-        )
-
-    y_train = (load_output_dataset(file_name=f"{config.Y_TRAIN_SET}_v{_version}.csv")
-        .set_index(["index"],drop=True)
-        .reset_index(drop=True).iloc[:,0])
-
-    X_test = (load_output_dataset(file_name=f"{config.X_TEST_SET}_v{_version}.csv")
-        .set_index(["index"],drop=True)
+    X_train = pd.read_csv(
+        f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.X_TRAIN_SET}_v{_version}.csv"
         )
     
-    y_test = (load_output_dataset(file_name=f"{config.Y_TEST_SET}_v{_version}.csv")
-        .set_index(["index"],drop=True)
-        .reset_index(drop=True).iloc[:,0])
+    y_train = pd.read_csv(
+        f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.Y_TRAIN_SET}_v{_version}.csv"
+    )
+
+    X_test = pd.read_csv(
+        f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.X_TEST_SET}_v{_version}.csv"
+    )
+    
+    y_test = pd.read_csv(
+        f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.Y_TEST_SET}_v{_version}.csv"
+    )
     
     return X_train, X_test, y_train, y_test

@@ -5,7 +5,7 @@ import os
 import __init__
 _version = __init__.__version__
 
-from src.processing.data_management import TrainTestSplit, LoadPipeline
+from src.processing.data_management import TrainTestSplit, LoadPipeline, LoadTrainTestSets
 from src.machine_learning.train_pipeline import TrainPipeline_ClfIrisSpecies
 from src.machine_learning.model_evaluation import ClfEvaluation
 
@@ -28,12 +28,14 @@ def ML_ClfIrisSpeciesBody(df):
     
     else:
         pipeline_ClfIrisSpecies = LoadPipeline(model_name=config.ClfIrisSpecies_NAME)
-        st.write("load saved train,test set and model")
+        X_train, X_test, y_train, y_test = LoadTrainTestSets(model_name=config.ClfIrisSpecies_NAME)
     
-    st.write(pipeline_ClfIrisSpecies)
+    
+    # pipeline steps
+    st.write("### Steps",pipeline_ClfIrisSpecies.steps)
     
       
-    # evaluate model
+    # Model Evaluation
     st.write("### Evaluation on Train Set")
     ClfEvaluation(
         Prediction=pipeline_ClfIrisSpecies.predict(X_train),
