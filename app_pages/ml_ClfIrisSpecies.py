@@ -5,7 +5,7 @@ from src.processing.data_management import TrainTestSplit
 from src.machine_learning.train_pipeline import TrainPipeline_Clf1_BR2
 from src.machine_learning.model_evaluation import ClfEvaluation
 
-def BodyPage2(df):
+def ML_ClfIrisSpeciesBody(df):
     
     st.write("## Clf1_BR2")
     

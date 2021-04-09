@@ -1,4 +1,4 @@
 import streamlit as st
 
-def BodyPage3(df):
+def ML_UI_Body(df):
     st.write("Page 3")

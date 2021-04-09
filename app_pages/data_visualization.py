@@ -2,7 +2,7 @@ import streamlit as st
 from src.processing.eda import PlotPairplot, Plot3D, HeatmapCorrelation
 from config import config
 
-def BodyPage1(df):
+def DataVisualizationBody(df):
 
     st.write("---")
     st.write("#### Pair Plot")

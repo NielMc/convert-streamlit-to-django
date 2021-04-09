@@ -1,7 +1,7 @@
 import streamlit as st
-from app_pages.page_01 import BodyPage1
-from app_pages.page_02 import BodyPage2
-from app_pages.page_03 import BodyPage3
+from app_pages.ml_ui import ML_UI_Body
+from app_pages.data_visualization import DataVisualizationBody
+from app_pages.ml_ClfIrisSpecies import ML_ClfIrisSpeciesBody
 from src.processing.data_management import LoadIrisDataset
 
 from config import config
@@ -20,8 +20,8 @@ def main():
         ]
     page = st.sidebar.radio("Main Menu",MenuOptions,index=0)
     
-    if page == MenuOptions[0]: BodyPage1(df)
-    elif page == MenuOptions[1]: BodyPage2(df)   
-    elif page == MenuOptions[2]: BodyPage3(df)
+    if page == MenuOptions[0]: ML_UI_Body(df)
+    elif page == MenuOptions[1]: DataVisualizationBody(df)   
+    elif page == MenuOptions[2]: ML_ClfIrisSpeciesBody(df)
 
 if __name__ == '__main__': main()
