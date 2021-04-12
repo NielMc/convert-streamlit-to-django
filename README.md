@@ -67,4 +67,4 @@ and analyze on the field which species that sample belong, but this may take 3h 
 * Button to fit and save a ML model. Once finished, the model is evaluated on train and test set.
 
 ## Django App User Interface
-* It contains *Page 1 and Page 2* fromm Streamlit App User Interface
+* It contains *Page 1 and Page 2* from Streamlit App User Interface
