@@ -28,5 +28,10 @@ def ML_UI_Body(df):
             f"* The predicted class is **{config.ClfIrisSpecies_MAP[y_live]}** \n"
             f"* The probability for each class is: \n\n "
             f"{ProbText}")
+        
+        
+
+        if st.button("Save information locally in the App"):
+            st.stop()
 
        
