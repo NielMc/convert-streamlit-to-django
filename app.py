@@ -7,7 +7,8 @@ from src.processing.data_management import LoadIrisDataset
 from config import config
 import __init__
 _version = __init__.__version__
-# st.write(config.PACKAGE_ROOT, _version)
+# st.write("* Model version: ",_version, "\n", "* App root folder: ",config.PACKAGE_ROOT)
+
 
 def main():
 

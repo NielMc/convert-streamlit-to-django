@@ -12,7 +12,10 @@ from src.processing.data_management import SavePipeline,SaveTrainTestSets
 
 def TrainPipeline_ClfIrisSpecies(X_train, X_test, y_train, y_test) -> None:
     
-    ml_pipeline = pipeline.ClfIrisSpecies  # load raw-pipeline
+    # load raw-pipeline
+    ml_pipeline = pipeline.ClfIrisStacking
+    
+    
     
     # set grid search
     
