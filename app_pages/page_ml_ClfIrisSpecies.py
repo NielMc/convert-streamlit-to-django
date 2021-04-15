@@ -33,7 +33,16 @@ def ML_ClfIrisSpeciesBody(df):
     
     
     # pipeline steps
-    st.write("### Steps",pipeline_ClfIrisSpecies.steps)
+    st.write(
+        "### ML Pipeline Steps",
+        pipeline_ClfIrisSpecies.steps
+    )
+    
+    # Main Features
+    st.write(
+        "### Main Features",
+        X_train.columns[pipeline_ClfIrisSpecies['feat_selection'].get_support()].to_list()
+    )
     
       
     # Model Evaluation
