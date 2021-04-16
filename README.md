@@ -1,6 +1,10 @@
 
 ## Iris
-<img src="https://miro.medium.com/max/1000/1*Hh53mOF4Xy4eORjLilKOwA.png" width="600" height="250" />
+<img src="https://miro.medium.com/max/1000/1*Hh53mOF4Xy4eORjLilKOwA.png" width="70%" height="70%" />
+
+## Dataset snapshot
+<img src="https://jixta.files.wordpress.com/2015/11/iris-dataset.png?w=816&h=9999" width="50%" height="50%" />
+
 
 ## Project Purpose
 * In this project, you'll build a Data Web App to provide actionable insights and data driven recommendations for analyzing flowers profile and increasing productivity levels for Botanic field team
