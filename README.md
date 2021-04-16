@@ -9,7 +9,7 @@
 * The Data Web App stakeholders (Special Flower divsion team) are interested to understand how each flower's species differ from each other and a tool to speedup species recognition.
 
 ## Data Web App owner's goal
-* The goal of this Data Web App is to help Botanic Garden to transform to a data driven organization.
+* The goal of this Data Web App is to help Botanic Garden to transform into a data driven organization.
 
 
 ## Business Requirements 
