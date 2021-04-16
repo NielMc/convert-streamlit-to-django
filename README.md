@@ -29,8 +29,11 @@
 
 ## Hypothesis
 * We assume that setosa is easily distinguished from the other species 
+  * We expect to validate that in the pairplot
 * In our strategic studies, it is indicated that setosa and versicolor have roughly similar level for sepal, event though is possible to distinguish quite easily.
+  * We expect to validate that in the pairplot
 * It is assumed that petal (both length and width) is a good predictor to determine the species
+  * The heatmap correlation may give some indication. The Feature Selection step at ML pipeline tells us the main predictors.
 
 
 ## ML Business Case
@@ -44,7 +47,7 @@ the petal and sepal and will feed the App.
 * The success metrics are: 
   * 97% overall accuracy in the testing set. 
   * 94% overall accuracy in live data. We will know the actual values 24h after the boxes arrive back to Botanic garden.
-  * The ML model is considered a failure if Setosa species' Precision and Recall is not 100%. This species cant be mixed with other species under no circunstance.
+  * The ML model is considered a failure if Setosa species' Precision and Recall is not 100%, both at train and test sets. This species cant be mixed with other species under no circunstance.
 
 
 * The output is defined as species class prediction based on flower measurements, 
@@ -63,17 +66,17 @@ and analyze on the field which species that sample belong, but this may take 3h 
 
 ## Streamlit App User Interface
 ### Page 1: ML UI
-* User Interface with inputs (flower measurements) as numerical fields and prediction as a statement, 
+* User Interface with inputs (flower petal and sepal levels) as numerical fields and prediction as a statement, 
 indicating the predicted species class and the probability of each species.
 * There is a button to save locally the measurements.
 
 ### Page 2: Data Visualization
-* Pairplot colored by species with multi-select menu listing all variables but species
-* 3D scatter plot colored by species with 3 menus, where each menu has list of all variables but species
+* Pairplot colored by species
+* 3D scatter plot colored by species
 * Correlation Heatmap using all variables 
 
 ### Page 3: ML model: ClfIrisSpecies
-* Button to fit and save a ML model. Once finished, the model is evaluated on train and test set.
+* The ML pipeline is evaluated on train and test set.
 
 ## Django App User Interface
 * It contains *Page 1 and Page 2* from Streamlit App User Interface
