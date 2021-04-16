@@ -30,6 +30,7 @@
 ## Hypothesis
 * We assume that setosa is easily distinguished from the other species 
 * In our strategic studies, it is indicated that setosa and versicolor have roughly similar level for sepal, event though is possible to distinguish quite easily.
+* It is assumed that petal (both length and width) is a good predictor to determine the species
 
 
 ## ML Business Case
