@@ -34,7 +34,7 @@ def ML_ClfIrisSpeciesBody(df):
     
     # pipeline steps
     st.write("### ML Pipeline Steps")
-    st.write(pipeline_ClfIrisSpecies.classifiers) #.steps
+    st.write(pipeline_ClfIrisSpecies.steps) 
 
     
     ## Main Features
