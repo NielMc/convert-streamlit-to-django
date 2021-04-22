@@ -49,34 +49,3 @@ def Plot3D(df_original,TARGET):
     st.plotly_chart(fig)
 
 
-
-def HeatmapCorrelation(df):
-
-    col1, col2 = st.beta_columns(2)
-
-    with col1: CorrType = st.selectbox(label="Select Correlation Type", options=['spearman','pearson'])
-    with col2: CorrThreshold = st.selectbox(label="Select Threshold Level", options=[0,0.4,0.6])
-    
-
-    
-    df_corr = df.corr(method=CorrType)
-    NumberOfColumns = len(df.columns)
-
-    
-    if NumberOfColumns > 1:
-        mask = np.zeros_like(df_corr, dtype=np.bool)
-        mask[np.triu_indices_from(mask)] = True
-        mask[abs(df_corr) < CorrThreshold] = True
-
-        fig, ax = plt.subplots()
-        ax = sns.heatmap(
-            df_corr,
-            annot=True,
-            xticklabels=True,
-            yticklabels=True,
-            mask=mask,
-            cmap='viridis',
-            annot_kws={"size": 8})
-
-        plt.ylim(NumberOfColumns,0)
-        st.pyplot(fig,clear_figure=True)

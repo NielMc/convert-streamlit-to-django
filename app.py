@@ -5,8 +5,7 @@ from app_pages.page_ml_ClfIrisSpecies import ML_ClfIrisSpeciesBody
 from src.processing.data_management import LoadIrisDataset
 
 from config import config
-import __init__
-_version = __init__.__version__
+_version = config.version_model
 # st.write("* Model version: ",_version, "\n", "* App root folder: ",config.PACKAGE_ROOT)
 
 

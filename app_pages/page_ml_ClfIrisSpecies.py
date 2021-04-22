@@ -2,8 +2,10 @@ import streamlit as st
 from config import config
 import os
 
-import __init__
-_version = __init__.__version__
+
+_version = config.version_model # __init__.__version__
+
+
 
 from src.processing.data_management import TrainTestSplit, LoadPipeline, LoadTrainTestSets
 from src.machine_learning.train_pipeline import TrainPipeline_ClfIrisSpecies
@@ -11,6 +13,7 @@ from src.machine_learning.model_evaluation import ClfEvaluation
 
 def ML_ClfIrisSpeciesBody(df):
     
+   
     st.write("## ClfIrisSpecies")
     st.write("---")
     

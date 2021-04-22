@@ -25,3 +25,6 @@ ClfIrisSpecies_MAP = {
         1:"1 - Versicolour",
         2:"2 - Virginica"
     }
+
+# version Model
+version_model = "DT"

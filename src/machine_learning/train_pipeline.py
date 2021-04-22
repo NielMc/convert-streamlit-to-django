@@ -7,18 +7,12 @@ import streamlit as st
 import src.machine_learning.pipeline as pipeline
 from src.processing.data_management import SavePipeline,SaveTrainTestSets
 
-# from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
- 
+
 
 def TrainPipeline_ClfIrisSpecies(X_train, X_test, y_train, y_test) -> None:
     
     # load raw-pipeline
-    ml_pipeline = pipeline.ClfIrisStacking
-    
-    
-    
-    # set grid search
-    
+    ml_pipeline = pipeline.ClfIrisSpecies_DT    
     
     ml_pipeline.fit(X_train,y_train)
     

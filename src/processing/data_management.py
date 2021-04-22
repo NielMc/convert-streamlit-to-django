@@ -2,9 +2,7 @@ import pandas as pd
 import streamlit as st
 from config import config
 import joblib
-
-import __init__
-_version = __init__.__version__
+_version = config.version_model # __init__.__version__
 
 def LoadIrisDataset():
     from sklearn.datasets import load_iris
