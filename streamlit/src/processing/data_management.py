@@ -1,5 +1,6 @@
 import pandas as pd
 from config import config
+import joblib
 
 
 def LoadIrisDataset():
@@ -27,59 +28,26 @@ def TrainTestSplit(df,TARGET):
 
 
 
-def SavePipeline(*, pipeline_to_save,model_name) -> None:
-    
-    save_file_name = f"{model_name}_v{_version}.pkl"
-    save_path = config.TRAINED_MODEL_DIR / save_file_name
-
-    joblib.dump(pipeline_to_save, save_path)
 
 
-def LoadPipeline(*, model_name):
 
-    file_path = f"{config.TRAINED_MODEL_DIR}/{model_name}_v{_version}.pkl"
+def LoadPipeline(*, model_name, path):
+
+    file_path = f"{path}/{model_name}.pkl"
     saved_pipeline = joblib.load(filename=file_path)
     return saved_pipeline
 
 
-def SaveTrainTestSets(model_name,target,X_train, X_test, y_train, y_test):
-    
-    X_train.to_csv(
-    	f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.X_TRAIN_SET}_v{_version}.csv",
-        index=False)
-
-    X_test.to_csv(
-        f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.X_TEST_SET}_v{_version}.csv",
-    	index=False)
-
-    df_y_train = pd.DataFrame(y_train,columns=[target])
-    df_y_train.to_csv(
-        f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.Y_TRAIN_SET}_v{_version}.csv",
-        index=False)
-
-    df_y_test = pd.DataFrame(y_test,columns=[target])
-    df_y_test.to_csv(
-        f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.Y_TEST_SET}_v{_version}.csv",
-        index=False)
-    
     
 
-def LoadTrainTestSets(model_name):
+def LoadTrainTestSets(model_name,path):
     
-    X_train = pd.read_csv(
-        f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.X_TRAIN_SET}_v{_version}.csv"
-        )
+    X_train = pd.read_csv(f"{path}/{model_name}_Xtrain.csv")
     
-    y_train = pd.read_csv(
-        f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.Y_TRAIN_SET}_v{_version}.csv"
-    )
-
-    X_test = pd.read_csv(
-        f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.X_TEST_SET}_v{_version}.csv"
-    )
+    y_train = pd.read_csv(f"{path}/{model_name}_ytrain.csv")
     
-    y_test = pd.read_csv(
-        f"{config.DATASET_OUTPUT_DIR}/{model_name}_{config.Y_TEST_SET}_v{_version}.csv"
-    )
+    X_test = pd.read_csv(f"{path}/{model_name}_Xtest.csv")
+    
+    y_test = pd.read_csv(f"{path}/{model_name}_ytest.csv")
     
     return X_train, X_test, y_train, y_test

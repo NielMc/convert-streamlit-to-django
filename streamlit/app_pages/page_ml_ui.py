@@ -10,7 +10,9 @@ def ML_UI_Body(df):
     
     X_live = CreateWidgetsUI(df)
     
-    pipeline_ClfIrisSpecies = LoadPipeline(model_name=config.ClfIrisSpecies_NAME)
+    pipeline_ClfIrisSpecies = LoadPipeline(
+                                    model_name="ClfModel",
+                                    path="outputs/trained_models")
     st.write("---")
     
     if st.button("Predict"):
