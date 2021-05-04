@@ -1,8 +1,6 @@
 import pandas as pd
-import streamlit as st
 from config import config
-import joblib
-_version = config.version_model # __init__.__version__
+
 
 def LoadIrisDataset():
     from sklearn.datasets import load_iris
@@ -24,10 +22,6 @@ def TrainTestSplit(df,TARGET):
                                         random_state=config.RANDOM_STATE,
                                         stratify=df[TARGET]
                                         )
-    
-    # st.write(" * Train Set", pd.concat([X_train,y_train], axis=1))
-    # st.write("* Test Set", pd.concat([X_test,y_test], axis=1))
-    # st.write("---")
 
     return X_train, X_test,y_train, y_test
 

@@ -15,11 +15,10 @@ def PlotPairplot(dfRaw,TARGET):
         data=df,
         hue= TARGET,
         plot_kws={'alpha':0.8},
-        # palette=sns.color_palette("RdBu_r", 7)
         )
     for i, j in zip(*np.triu_indices_from(fig.axes, 1)):
         fig.axes[i, j].set_visible(False)
-    st.pyplot(fig)#,clear_figure=True)
+    st.pyplot(fig)
 
 
 
@@ -37,6 +36,7 @@ def Plot3D(df_original,TARGET):
     df = df_original.copy()
     df[TARGET] = df[TARGET].replace(config.ClfIrisSpecies_MAP)
     df[TARGET] = df[TARGET].astype(str)
+    
     fig = px.scatter_3d(df, x=select_x, y=select_y, z=select_z,
         color=TARGET, 
         size_max=12,

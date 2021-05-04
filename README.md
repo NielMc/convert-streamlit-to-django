@@ -76,7 +76,6 @@ indicating the predicted species class and the probability of each species.
 ### Page 2: Data Visualization
 * Pairplot colored by species
 * 3D scatter plot colored by species
-* Correlation Heatmap using all variables 
 
 ### Page 3: ML model: ClfIrisSpecies
 * The ML pipeline is evaluated on train and test set.
