@@ -31,9 +31,5 @@ def ML_UI_Body(df):
             f"* The probability for each class is: \n\n "
             f"{ProbText}")
         
-        
-
-        if st.button("Save information locally in the App"):
-            st.stop()
 
        
