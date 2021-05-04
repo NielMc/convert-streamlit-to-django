@@ -72,7 +72,6 @@ and analyze on the field which species that sample belong, but this may take 3h 
 ### Page 1: ML UI
 * User Interface with inputs (flower petal and sepal levels) as numerical fields and prediction as a statement, 
 indicating the predicted species class and the probability of each species.
-* There is a button to save locally the measurements.
 
 ### Page 2: Data Visualization
 * Pairplot colored by species
