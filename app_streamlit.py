@@ -1,15 +1,17 @@
-# / https://share.streamlit.io/daniellewisdl/streamlit-cheat-sheet/master/app.py
-
 import streamlit as st
 import numpy as np
 import pandas as pd
-import datetime
+import time
 
+
+################ Agenda
 # Display text
 # display data
 # display chart
-# optmize performance
+# optimize performance
 # Display widgets
+# Display media
+# Display progress and status
 
 
 ################################################################################
@@ -18,7 +20,7 @@ import datetime
 # st.text('Field with  text')
 # st.markdown('This is **markdown**, *is it?*')
 # st.latex(r''' e^{i\pi} + 1 = 0 ''')
-# st.write('You will use this function all the time!')
+# st.write('we will use this st.write() all the time!')
 # st.write(['st', 'is <', 3])
 # st.write("## Hello")
 # st.write("* Hello")
@@ -28,6 +30,7 @@ import datetime
 # st.header('My header')
 # st.subheader('My sub')
 # st.code('for i in range(8): foo()')
+
 
 
 
@@ -80,7 +83,7 @@ import seaborn as sns
 # for col in penguins.select_dtypes(include="object").columns:
 #     st.write(f"### {col}")
 #     fig = sns.pairplot(data=penguins, hue=col)
-    # st.pyplot(fig)
+#     st.pyplot(fig)
 
 
 
@@ -125,67 +128,87 @@ import seaborn as sns
 ################################################################################
 ### Display widgets ###
 ################################################################################
-st.button('Hit me')
-st.checkbox('Check me out')
-st.radio('Radio', [1,2,3])
-st.selectbox('Select', [1,2,3])
-st.multiselect('Multiselect', [1,2,3])
-st.slider('Slide me', min_value=0, max_value=10)
-st.select_slider('Slide to select', options=[1,'2'])
-st.text_input('Enter some text')
-st.number_input('Enter a number')
-st.text_area('Area for textual entry')
-st.date_input('Date input')
-st.time_input('Time entry')
-st.file_uploader('File uploader')
-st.color_picker('Pick a color')
-st.write("---")
+# st.button('Hit me')
+# st.checkbox('Check me out')
+# st.radio('Radio', [1,2,3])
+# st.selectbox('Select', [1,2,3])
+# st.multiselect('Multiselect', [1,2,3])
+# st.slider('Slide me', min_value=0, max_value=10)
+# st.select_slider('Slide to select', options=[1,'2'])
+# st.text_input('Enter some text')
+# st.number_input('Enter a number')
+# st.text_area('Area for textual entry')
+# st.date_input('Date input')
+# st.time_input('Time entry')
+# st.file_uploader('File uploader')
+# st.color_picker('Pick a color')
+# st.write("---")
 
 
-list_of_sth = st.multiselect('Select', np.arange(1,11,1))
-st.write("* list_of_sth",list_of_sth)
+# list_of_sth = st.multiselect('list of sth', [1,2,3,4,5,6])
+# st.write("* list_of_sth",list_of_sth)
+
+
+
+
+
+# penguins = sns.load_dataset("penguins")
+# hue_option =  st.selectbox(
+#     label='Select a variable',
+#     options=penguins.select_dtypes(include="object").columns)
+# if st.button(label="Pairplot"):
+#     fig = sns.pairplot(data=penguins, hue=hue_option)
+#     st.pyplot(fig)
+
+
+
+
+# main_menu = st.sidebar.radio('Main Menu:', ['Option 1','Option 2','Option 3'])
+
+
 
 ################################################################################
 ### Display media ###
 ################################################################################
 
-
-# st.image('./header.png')
-# st.audio(data)
-# st.video(data)
-
-# st.title("Form for the Users")
-# st.write("Here, you can answer to some questions in this form.")
-
-# user_id = st.text_input("ID", value="Your ID", max_chars=7)
-# info = st.text_area("Share some information about you", "Put information here",
-#                     help='You can write about your hobbies or family')
-# age = st.number_input("Age", min_value=18, max_value=100, step=1)
-# birth_date = st.date_input("Date of Birth", min_value=datetime.date(1921, 1, 1),
-#                            max_value=datetime.date(2003, 12, 31))
-# smoke = st.checkbox("Do you smoke?")
-# genre = st.radio("Which movie genre do you like?",
-#                  options=['horror', 'adventure', 'romantic'])
-# weight = st.slider("Choose your weight", min_value=40., max_value=150., step=0.5)
-# physical_form = st.selectbox("Select level of your physical condition",
-#                              options=["Bad", "Normal", "Good"])
-# colors = st.multiselect('What are your favorite colors',
-#                         options=['Green', 'Yellow', 'Red', 'Blue', 'Pink'])
-# image = st.file_uploader("Upload your photo", type=['jpg', 'png'])
-
 # col1, col2 = st.beta_columns(2)
 # with col1:
 #     st.image("https://static.streamlit.io/examples/cat.jpg", width=300)
-#     st.button("Like cats")
 # with col2:
 #     st.image("https://static.streamlit.io/examples/dog.jpg", width=355)
-#     st.button("Like dogs")
 
-# submit = st.button("Submit")
+# st.audio(data="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav",)
+# st.video(data="https://www.youtube.com/watch?v=g4Vp_P9d6O4&list=RDg4Vp_P9d6O4&start_radio=1")
 
-# if submit:
-#     st.write("You submitted the form")
 
-# click = st.sidebar.button('Click me!')
-# if click:
-#     st.sidebar.write("You clicked the button")
+
+
+
+################################################################################
+### Display progress and status ###
+################################################################################
+# import time
+# my_bar = st.progress(0)
+# for x in np.arange(0,101,10):
+#     time.sleep(0.1)
+#     my_bar.progress(int(x))
+
+
+# st.spinner()
+# with st.spinner(text='Your request is in progress...'):
+#     time.sleep(5)
+#     st.success('Done')
+#     st.balloons()
+
+
+
+# st.error('Error message')
+# st.warning('Warning message')
+# st.info('Info message')
+# st.success('Success message')
+
+# try:
+#     sum= 1/0
+# except Exception as e:
+#     st.exception(e)
+
