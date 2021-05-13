@@ -1,1 +1,0 @@
-This folder has all django application to be developed
