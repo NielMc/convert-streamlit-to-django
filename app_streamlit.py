@@ -3,6 +3,13 @@ import numpy as np
 import pandas as pd
 import datetime
 
+# Display text
+# display data
+# display chart
+# optmize performance
+# Display widgets
+
+
 ################################################################################
 ### Display text ###
 ################################################################################
@@ -64,9 +71,10 @@ import seaborn as sns
 # st.pyplot(fig)
 
 
-penguins = sns.load_dataset("penguins")
+
 
 # st.write("* Seaborn")
+# penguins = sns.load_dataset("penguins")
 # for col in penguins.select_dtypes(include="object").columns:
 #     st.write(f"### {col}")
 #     fig = sns.pairplot(data=penguins, hue=col)
@@ -75,13 +83,14 @@ penguins = sns.load_dataset("penguins")
 
 
 # st.write("* Plotly")
+# penguins = sns.load_dataset("penguins")
 # import plotly.express as px
 # fig = px.scatter_3d(penguins.dropna(),x='bill_length_mm',y='bill_depth_mm',
 #             z='body_mass_g',color='island',width=800,height=700)
 # st.plotly_chart(fig)
 
 
-# it supports bokeh_chart, vega_lite_chart, altair_chart, pydeck_chart
+# streamlit supports bokeh_chart, vega_lite_chart, altair_chart, pydeck_chart
 
 
 # st.write("* Map")
@@ -93,10 +102,12 @@ penguins = sns.load_dataset("penguins")
 ################################################################################
 ### Optimize performance ###
 ################################################################################
-# @st.cache
-# ... def foo(bar):
-# ...     # Mutate bar
-# ...     return data
+@st.cache
+def load_your_data():
+    return sns.load_dataset("penguins")
+
+df = load_your_data()
+st.write("* df", df)
 
 ################################################################################
 ### Display widgets ###
@@ -109,9 +120,9 @@ penguins = sns.load_dataset("penguins")
 ################################################################################
 
 
-st.image('./header.png')
-st.audio(data)
-st.video(data)
+# st.image('./header.png')
+# st.audio(data)
+# st.video(data)
 
 # st.title("Form for the Users")
 # st.write("Here, you can answer to some questions in this form.")
