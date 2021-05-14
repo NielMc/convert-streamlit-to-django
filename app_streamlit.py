@@ -22,7 +22,8 @@ import time
 # st.latex(r''' e^{i\pi} + 1 = 0 ''')
 # st.write('we will use this st.write() all the time!')
 # st.write(['st', 'is <', 3])
-# st.write("## Hello")
+# a = ['st', 'is <', 3]
+# st.write("## Hello",a)
 # st.write("* Hello")
 # st.write("---")
 
@@ -78,8 +79,9 @@ import seaborn as sns
 
 
 
-# st.write("* Seaborn")
+
 # penguins = sns.load_dataset("penguins")
+# st.write("* Seaborn",penguins)
 # for col in penguins.select_dtypes(include="object").columns:
 #     st.write(f"### {col}")
 #     fig = sns.pairplot(data=penguins, hue=col)
@@ -117,7 +119,7 @@ import seaborn as sns
 #     return sns.load_dataset("penguins")
 
 # df = load_your_data()
-# df =sns.load_dataset("penguins")
+# # df =sns.load_dataset("penguins")
 
 # st.write("* df", df)
 
@@ -152,13 +154,14 @@ import seaborn as sns
 
 
 
-# penguins = sns.load_dataset("penguins")
-# hue_option =  st.selectbox(
-#     label='Select a variable',
-#     options=penguins.select_dtypes(include="object").columns)
-# if st.button(label="Pairplot"):
-#     fig = sns.pairplot(data=penguins, hue=hue_option)
-#     st.pyplot(fig)
+penguins = sns.load_dataset("penguins")
+hue_option =  st.selectbox(
+    label='Select a variable',
+    options=penguins.select_dtypes(include="object").columns)
+
+if st.button(label="Pairplot"):
+    fig = sns.pairplot(data=penguins, hue=hue_option)
+    st.pyplot(fig)
 
 
 
@@ -187,7 +190,7 @@ import seaborn as sns
 ################################################################################
 ### Display progress and status ###
 ################################################################################
-# import time
+import time
 # my_bar = st.progress(0)
 # for x in np.arange(0,101,10):
 #     time.sleep(0.1)
@@ -202,7 +205,7 @@ import seaborn as sns
 
 
 
-# st.error('Error message')
+# st.error(df)
 # st.warning('Warning message')
 # st.info('Info message')
 # st.success('Success message')

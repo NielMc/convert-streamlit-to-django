@@ -4,13 +4,7 @@ import joblib
 
 
 def LoadIrisDataset():
-    from sklearn.datasets import load_iris
-    
-    data = load_iris()
-    df = pd.DataFrame(data.data, columns=data.feature_names)
-    df[config.ClfIrisSpecies_TARGET] = pd.Series(data.target)
-
-    return df
+    return pd.read_csv("inputs/datasets/Iris.csv")
 
 
 def TrainTestSplit(df,TARGET):

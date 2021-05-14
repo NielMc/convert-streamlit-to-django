@@ -1,5 +1,10 @@
-import streamlit as st
 
+################################################
+# run on terminal: streamlit run app.py
+#################################################
+
+
+import streamlit as st
 from app_pages.page_ml_ui import ML_UI_Body
 from app_pages.page_data_visualization import DataVisualizationBody
 from app_pages.page_ml_ClfIrisSpecies import ML_ClfIrisSpeciesBody
@@ -7,7 +12,6 @@ from src.processing.data_management import LoadIrisDataset
 
 from config import config
 _version = config.version_model
-
 
 def main():
 
