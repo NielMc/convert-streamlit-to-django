@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}<title>Visualisation</title>{% endblock %}
+{% block content %}
+<div class="row">
+
+    <div class="col-xl-12 col-lg-12">
+
+        <!-- Area Chart -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+            </div>
+            <div class="card-body">
+                <div class="chart-area">
+                    <img src="data:image/png;base64,{{chart.chart}}" alt="Chart" height="800">
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="col-xl-12 col-lg-12">
+
+            <!-- Area Chart -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-area">
+                        {{plot|safe}}
+                    </div>
+                </div>
+            </div>
+            </div>       
+{% endblock %}

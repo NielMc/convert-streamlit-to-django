@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}<title>Home Page</title>{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-xl-10 col-md-12 mb-12">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Machine Learning UI</h6>
+            </div>
+            <div class="card-body">
+                <form action="{% url 'size'  %}" method="post">
+                    {% csrf_token %}
+                    <div class="slidecontainer">
+                        <label for="slength">Enter Sepal Length: </label>
+                        <input type="range" min="3.44" max="9.48" value="50" class="slider" id="slength" name="slength">
+                        <p>Value: <span id="lengths"></span></p>
+                        <label for="swidth">Enter Sepal Width: </label>
+                        <input type="range" min="1.6" max="5.28" value="50" class="slider" id="swidth" name="swidth">
+                        <p>Value: <span id="widths"></span></p>
+                        <label for="plength">Enter Petal Length: </label>
+                        <input type="range" min="0.8" max="8.28" value="50" class="slider" id="plength" name="plength">
+                        <p>Value: <span id="lengthp"></span></p>
+                        <label for="pwidth">Enter Petal Width: </label>
+                        <input type="range" min="0.08" max="3.0" value="50" class="slider" id="pwidth" name="pwidth">
+                        <p>Value: <span id="widthp"></span></p>
+                      </div>
+                      <input type="submit" class="btn btn-success btn-block" value="Predict">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-10 col-md-12 mb-12">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                {{ info }}
+                </div>
+                </div>
+                </div>
+</div>
+{% endblock %}
